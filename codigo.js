@@ -209,3 +209,90 @@ console.log(precio);
 const copiaProducto = { ...producto, stock: 5 };
 
 console.log(copiaProducto);
+
+//ej 16
+const arrayProductos = [
+
+{nombre:"arroz", precio:10},    
+{nombre:"frijoles", precio:25},
+{nombre:"lentejas", precio:60}
+];
+
+
+let nombreProducto = "arroz";
+
+function buscarProducto(arrayProductos, nombreProducto){
+    for(let i = 0; i < arrayProductos.length; i++){
+        if(arrayProductos[i].nombre === nombreProducto){
+            return arrayProductos[i];
+        }
+    }
+}
+console.log(buscarProducto(arrayProductos, nombreProducto));
+
+
+
+//ej 17
+
+function ProductoMayorA50 (arrayProductos){
+    return arrayProductos.filter(element => element.precio > 50);
+}
+
+console.log(ProductoMayorA50(arrayProductos));
+
+//ej 18
+
+function promedioArray(arrayNumPares){
+    let suma = 0;
+    for(let i = 0; i < arrayNumPares.length; i++){
+        suma += arrayNumPares[i];
+    }
+    return suma / arrayNumPares.length;
+}
+
+console.log(promedioArray(arrayNumPares));
+
+
+//DESAFIO FINAAAAALLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL
+
+const arrayUsuarios = [
+
+{id:1, nombre:"Ana", edad:20},
+
+{id:2, nombre:"Juan", edad:15},
+
+{id:3, nombre:"Pedro", edad:30}
+
+]
+
+function obtenerUsuarios(){
+    return arrayUsuarios;
+}
+
+console.log(obtenerUsuarios());
+
+function obtenerUsuarioPorId(id){
+    for(let i = 0; i < arrayUsuarios.length; i++){
+        if(arrayUsuarios[i].id === id){
+            return arrayUsuarios[i];
+        }
+    }
+}
+console.log(obtenerUsuarioPorId(2));
+
+function obtenerMayoresDeEdad(){
+    return arrayUsuarios.filter(usuario => usuario.edad >= 18);
+}
+console.log(obtenerMayoresDeEdad());
+
+function agregarUsuario(nombre, edad){
+    const nuevoUsuario = {
+        id: arrayUsuarios.length + 1,
+        nombre: nombre,
+        edad: edad
+    };
+    arrayUsuarios.push(nuevoUsuario);
+    return nuevoUsuario;}
+
+console.log(agregarUsuario("Maria", 25));
+
