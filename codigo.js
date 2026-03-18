@@ -190,5 +190,22 @@ function sumaEdades(usuarios){
 
 console.log(sumaEdades(usuarios));
 
+//ej 14
 
+const producto = {
 
+nombre:"Notebook",
+
+precio:1000
+
+}
+
+const {nombre, precio} = producto;
+console.log(nombre);
+console.log(precio);
+
+//ej 15
+
+const copiaProducto = { ...producto, stock: 5 };
+
+console.log(copiaProducto);
